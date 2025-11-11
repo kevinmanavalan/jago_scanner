@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_swipe_button/flutter_swipe_button.dart';
 import 'package:jago_volunteer_scanner/screens/widgets/detailed_members_modal.dart';
 import 'package:jago_volunteer_scanner/screens/widgets/member_card.dart';
 
@@ -240,27 +241,41 @@ class ProfileScreen extends StatelessWidget {
     return Container(
       color: Colors.white, // Match the page background
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-      child: SafeArea(
-        // SafeArea for bottom phone controls
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF1E6050), // Dark green from image
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-          ),
-          onPressed: () {
-            // Handle check-in logic
-          },
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.arrow_forward_rounded, color: Colors.white),
-              SizedBox(width: 10),
-              Text('Swipe to check-in the participant', style: TextStyle(fontSize: 16, color: Colors.white)),
-            ],
+      child: SwipeButton.expand(
+        thumb: Icon(Icons.double_arrow_rounded, color: Color(0xFF244932)),
+        thumbPadding: EdgeInsets.all(3),
+        activeThumbColor: Colors.white,
+        activeTrackColor: Color(0xFF244932),
+        onSwipe: () {},
+        child: Align(
+          alignment: Alignment.centerRight,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: Text("Swipe to check-in the participant", style: TextStyle(color: Colors.white)),
           ),
         ),
       ),
+      // SafeArea(
+      //   // SafeArea for bottom phone controls
+      //   child: ElevatedButton(
+      //     style: ElevatedButton.styleFrom(
+      //       backgroundColor: const Color(0xFF1E6050), // Dark green from image
+      //       padding: const EdgeInsets.symmetric(vertical: 16),
+      //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      //     ),
+      //     onPressed: () {
+      //       // Handle check-in logic
+      //     },
+      //     child: const Row(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Icon(Icons.arrow_forward_rounded, color: Colors.white),
+      //         SizedBox(width: 10),
+      //         Text('Swipe to check-in the participant', style: TextStyle(fontSize: 16, color: Colors.white)),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
