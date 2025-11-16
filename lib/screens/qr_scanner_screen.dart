@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:jago_volunteer_scanner/screens/profile_screen.dart';
-import 'package:jago_volunteer_scanner/screens/widgets/scanner_overlay.dart';
+import 'package:jago_volunteer_scanner/widgets/scanner_overlay.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class QRScannerScreen extends StatefulWidget {
@@ -118,7 +118,7 @@ class _MobileScannerAdvancedState extends State<QRScannerScreen> {
                             width: double.infinity,
                             child: MaterialButton(
                               onPressed: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen(userId: "")))},
-                              color: const Color(0xFF5D7B6F), // Dark green-ish color
+                              color: const Color(0xFF4D725B), // Dark green-ish color
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                               padding: const EdgeInsets.symmetric(vertical: 16.0),
                               child: const Text("Proceed", style: TextStyle(color: Colors.white, fontSize: 16)),

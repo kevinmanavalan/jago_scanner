@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_swipe_button/flutter_swipe_button.dart';
-import 'package:jago_volunteer_scanner/screens/widgets/detailed_members_modal.dart';
-import 'package:jago_volunteer_scanner/screens/widgets/member_card.dart';
+import 'package:jago_volunteer_scanner/widgets/detailed_members_modal.dart';
+import 'package:jago_volunteer_scanner/widgets/member_card.dart';
 
 class ProfileScreen extends StatelessWidget {
   final String userId;
